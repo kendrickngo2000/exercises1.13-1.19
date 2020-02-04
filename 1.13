@@ -1,0 +1,14 @@
+#include <stdio.h> 
+#include <stdlib.h>
+#include <string.h>
+
+int main(void) {
+	int x;
+	while ((x = getchar()) != EOF) {
+		if (x == ' ' || x == '\n' || x == '\t')
+			putchar('\n');
+		else
+			putchar('*');
+	}
+	return 0;
+}
