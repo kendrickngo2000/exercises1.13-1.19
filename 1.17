@@ -1,0 +1,25 @@
+#include<stdio.h>
+
+#define MAX 1000
+#define MIN 80
+
+int main() {
+	int x;
+	int start = 0;
+	char line[MAX];
+
+	while ((x = getchar()) != EOF) {
+		if (x != '\n') {
+			line[start] = x;
+			++start;
+		}
+		else {
+			line[start] = '\0';
+			if (start >= MIN) {
+				printf("%s\n", line);
+			}
+			start = 0;
+		}
+	}
+	return 0;
+}
