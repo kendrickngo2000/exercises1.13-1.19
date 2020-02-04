@@ -1,0 +1,36 @@
+#include<stdio.h>
+
+#define MAX 1000
+#define outline 1
+#define IN 0
+
+int main() {
+int x, z;
+int index = 0;
+char line[MAX];
+int update;
+
+while ((x = getchar()) != EOF) {
+if (x != '\n') {
+	line[index] = x;
+	index++;
+}
+else if (x == '\n') {
+	line[index] = '\n';
+	line[index + 1] = '\0';
+	for (z = 0; z < MAX; z++) {
+		char s = line[z];
+		if (s == ' ' || s == '\t') {
+			line[z] = '\n';
+			line[z + 1] = '\0';
+			update = 1;
+		}
+	}
+} printf("%s", line);
+for (z = 0; z < MAX; z++) {
+	line[z] = 0;
+}
+index = 0;
+}
+return 0;
+}
