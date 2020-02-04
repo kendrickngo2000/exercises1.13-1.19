@@ -1,0 +1,18 @@
+#include<stdio.h>
+
+
+char* reverse(char* s) {
+	size_t c = strnlen(s);
+	for (size_t i = 0; i < c/2; i++) {
+		char z = s[c - i - 1];
+		s[c - i - 1] = s[i];
+		s[i] = c;
+	}
+	return s;
+}
+
+int main() {
+	char s[] = "Hello my name is kendrick";
+	puts(s);
+	puts(reverse(s));
+}
